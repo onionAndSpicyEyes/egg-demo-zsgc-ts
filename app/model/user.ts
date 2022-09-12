@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 export default app => {
     const mongoose = app.mongoose;
     const Schema = mongoose.Schema;
@@ -10,8 +11,8 @@ export default app => {
         },
         password: {
             type: String,
-            minlength: [2, '字符串度不能小于6'],
-            maxlength: [10, '字符串度不能大于12'],
+            minlength: [2, '字符串度不能小于2'],
+            maxlength: [10, '字符串度不能大于10'],
         },
     });
 

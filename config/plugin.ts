@@ -10,6 +10,10 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-mongoose',
   },
+  swaggerdoc: {
+    enable: true, // 是否启用。
+    package: 'egg-swagger-doc', // 指定包名称。
+  },
 };
 
 export default plugin;
