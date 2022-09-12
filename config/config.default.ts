@@ -17,7 +17,14 @@ export default (appInfo: EggAppInfo) => {
 
   // add your egg config in here
   config.middleware = [];
-
+  config.mongoose = {
+    client: {
+      url: 'mongodb://127.0.0.1:27017/yyy', // 你的数据库地址，egg_article是你数据库得名字
+      options: {
+        useNewUrlParser: true,
+      },
+    },
+  };
   // add your special config in here
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,

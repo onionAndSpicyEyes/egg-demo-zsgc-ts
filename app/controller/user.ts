@@ -19,6 +19,7 @@ class Res {
 class ResData extends Res {
   data: any;
   constructor(res) {
+    // eslint-disable-next-line array-bracket-spacing
     super([res[0], res[1]]);
     this.data = res[2];
   }
@@ -28,6 +29,7 @@ export default class HomeController extends Controller {
     const { ctx } = this;
     const user = ctx.request.body;
     if (!user.name || !user.password) {
+      // eslint-disable-next-line array-bracket-spacing
       ctx.body = new Res(['参数不正确', 403]);
       return;
     }
@@ -43,6 +45,7 @@ export default class HomeController extends Controller {
     const { ctx } = this;
     const user = ctx.request.body;
     if (!user.name) {
+      // eslint-disable-next-line array-bracket-spacing
       ctx.body = new Res(['参数不正确', 403]);
       return;
     }
@@ -53,13 +56,11 @@ export default class HomeController extends Controller {
     const { ctx, service } = this;
     const user = ctx.request.body;
     if (!user.name || !user.password) {
+      // eslint-disable-next-line array-bracket-spacing
       ctx.body = new Res(['参数不正确', 403]);
       return;
     }
-    const res: [string, number] = await service.user.post({
-      name: 79,
-      password: '1689123',
-    });
+    const res: [string, number] = await service.user.post(user);
     ctx.body = new Res(res);
   }
 }
